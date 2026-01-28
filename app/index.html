@@ -5,9 +5,24 @@
     <title>Magic Eight Ball</title>
 </head>
 <body>
-    <h3 class="heading">Magic Eight Ball</h3>
+    <main>
+        <h3 class="heading">Magic Eight Ball</h3>
     <br>
-    div.answerButton
+    <div class="answerButton">
+        <div class="eightBall">
+            <img src="/eightBall.png"/>
+        </div>
+        <br>
+        <div class="ansButton">
+            <form class="askButton">
+                <label class="label" for="askInput">Type your question...:</label>
+                <input type="text" id="askInput" required />
+                <button class="submit">Ask</button>
+                <!-- tmr find out how to make form and button one input -->
+            </form>
+        </div>
+    </div>
     <script type="module" src="/src/app.js"></script>
+    </main>
 </body>
 </html>
