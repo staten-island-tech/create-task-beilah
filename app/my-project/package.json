@@ -1,5 +1,5 @@
 {
-  "name": "app",
+  "name": "my-project",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,9 +10,5 @@
   },
   "devDependencies": {
     "vite": "^7.2.4"
-  },
-  "dependencies": {
-    "@tailwindcss/vite": "^4.1.18",
-    "tailwindcss": "^4.1.18"
   }
 }

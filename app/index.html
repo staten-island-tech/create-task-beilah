@@ -1,28 +1,33 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Magic Eight Ball</title>
-</head>
-<body>
+  </head>
+  <body>
     <main>
-        <h3 class="heading">Magic Eight Ball</h3>
-    <br>
-    <div class="answerButton">
+      <br />
+      <h2 class="heading text-center text-3xl">Magic Eight Ball</h2>
+      <br />
+      <div class="answerButton">
         <div class="eightBall">
-            <img src="/eightBall.png"/>
+          <img class="img m-auto" src="/eightBall.png" />
         </div>
-        <br>
+        <br />
         <div class="ansButton">
-            <form class="askButton">
-                <label class="label" for="askInput">Type your question...:</label>
-                <input type="text" id="askInput" required />
-                <button class="submit">Ask</button>
-                <!-- tmr find out how to make form and button one input -->
-            </form>
+          <form class="askButton text-center">
+            <label class="label" for="askInput">Type your question:</label>
+            <input
+              type="text"
+              class="border-2 border-b-cyan-950"
+              id="askInput"
+              required
+            />
+            <button class="submit" type="submit">Shake It</button>
+          </form>
         </div>
-    </div>
-    <script type="module" src="/src/app.js"></script>
+      </div>
+      <script type="module" src="/src/app.js"></script>
     </main>
-</body>
+  </body>
 </html>
