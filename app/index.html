@@ -3,29 +3,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Magic Eight Ball</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
   </head>
   <body>
     <main>
       <br />
-      <h2 class="heading text-center text-3xl">Magic Eight Ball</h2>
+      <h1 class="heading text-center text-5xl">Magic Eight Ball</h1>
       <br />
       <div class="answerButton">
         <div class="eightBall">
-          <img class="img m-auto" src="/eightBall.png" />
+          <img id="eightBallImg" class="img m-auto" src="/eightBall.png" alt="Magic Eight Ball"/>
         </div>
         <br />
         <div class="ansButton">
           <form class="askButton text-center">
-
-              <label class="label" for="askInput">Type your question:</label>
-              <input
-                type="text"
-                class=" border-2 border-b-cyan-950"
-                id="askInput"
-                required
-              />
-              <button class="submit" type="submit">Shake It</button>
-
+            <label class="label text-2xl" for="askInput">Type your question:</label>
+            <input
+              type="text"
+              class="input text-2xl border-2 border-b-cyan-950 p-2 w-125"
+              id="askInput"
+              placeholder="Type your question here..."
+              required
+            />
+            <br>
+            <button class="text-2xl submit p-2 m-4 hover:font-bold hover:underline transition-all duration-200" type="submit">Shake It</button>
           </form>
           <div class="ansDiv"></div>
         </div>

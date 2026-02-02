@@ -1,1 +1,7 @@
 @import "tailwindcss";
+
+.heading, .label, .input, .submit, .question, .answer {
+    font-family: "Instrument Serif", serif;
+    font-weight: 400;
+    font-style: normal;
+}
