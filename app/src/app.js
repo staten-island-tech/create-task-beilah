@@ -11,7 +11,7 @@ let answers = [
   "For now, no.",
   "Is the sky blue?",
   "Absolutely.",
-  "Signs point to yes.",
+  "Absolutely not.",
   "Highly unlikely.",
   "Without a doubt.",
   "The odds are in your favor.",
@@ -20,32 +20,33 @@ let answers = [
   "All paths lead to yes.",
   "That's a hard no.",
   "Fate says wait.",
-  "It is written in the stars."
+  "It is written in the stars.",
+  "Signs point to yes."
 ];
 
 const form = document.querySelector(".askButton");
 const questionInput = document.querySelector("#askInput");
 
-form.addEventListener("submit", (a) => {
-  a.preventDefault();
+function eightBall() {
+  form.addEventListener("submit", (a) => {
+    a.preventDefault();
 
-  const question = questionInput.value;
+    const question = questionInput.value;
 
-  const randomIndex = Math.floor(Math.random() * answers.length);
-  const randomAnswer = answers[randomIndex];
+    const randomIndex = Math.floor(Math.random() * answers.length);
+    const randomAnswer = answers[randomIndex];
 
-  console.log("Question:", question);
-  console.log("Answer:", randomAnswer);
+    const ansDiv = document.querySelector(".ansDiv");
 
-  const ansDiv = document.querySelector(".ansDiv");
+    ansDiv.innerHTML = ``;
 
-  ansDiv.innerHTML = ``;
-
-  ansDiv.insertAdjacentHTML(
-    "beforeend",
-    `<h3 class="question text-2xl text-center">Question: ${question}</h3>
+    ansDiv.insertAdjacentHTML(
+      "beforeend",
+      `<h3 class="question text-2xl text-center">Question: ${question}</h3>
         <h3 class="answer text-2xl text-center">Answer: ${randomAnswer}</h3>`,
-  );
+    );
 
-  form.reset();
-});
+    form.reset();
+  });
+}
+eightBall();
