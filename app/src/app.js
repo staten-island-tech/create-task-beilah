@@ -21,32 +21,29 @@ let answers = [
   "That's a hard no.",
   "Fate says wait.",
   "It is written in the stars.",
-  "Signs point to yes."
+  "Signs point to yes.",
 ];
 
 const form = document.querySelector(".askButton");
 const questionInput = document.querySelector("#askInput");
 
-function eightBall() {
-  form.addEventListener("submit", (a) => {
-    a.preventDefault();
+form.addEventListener("submit", (a) => eightBall(a));
 
-    const question = questionInput.value;
+function eightBall(a) {
+  a.preventDefault();
+  const question = questionInput.value;
 
-    const randomIndex = Math.floor(Math.random() * answers.length);
-    const randomAnswer = answers[randomIndex];
+  const randomIndex = Math.floor(Math.random() * answers.length);
+  const randomAnswer = answers[randomIndex];
 
-    const ansDiv = document.querySelector(".ansDiv");
+  const ansDiv = document.querySelector(".ansDiv");
 
-    ansDiv.innerHTML = ``;
+  ansDiv.innerHTML = ``;
 
-    ansDiv.insertAdjacentHTML(
-      "beforeend",
-      `<h3 class="question text-2xl text-center">Question: ${question}</h3>
+  ansDiv.insertAdjacentHTML(
+    "beforeend",
+    `<h3 class="question text-2xl text-center">Question: ${question}</h3>
         <h3 class="answer text-2xl text-center">Answer: ${randomAnswer}</h3>`,
-    );
-
-    form.reset();
-  });
+  );
+  form.reset();
 }
-eightBall();
