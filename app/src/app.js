@@ -2,31 +2,53 @@ import "./styles.css";
 
 let answers = [
   "Yes.",
-  "No.",
-  "Maybe.",
-  "The universe doesn't answer...",
-  "Don't count on it.",
   "As I see it, yes.",
-  "For now, no.",
-  "Is the sky blue?",
   "Absolutely.",
-  "Absolutely not.",
-  "Highly unlikely.",
   "Without a doubt.",
   "The odds are in your favor.",
-  "Better not tell you now.",
   "Trust your instincts.",
   "All paths lead to yes.",
-  "That's a hard no.",
-  "Fate says wait.",
   "It is written in the stars.",
   "Signs point to yes.",
+  "The stars have aligned.",
+  "No.",
+  "Don't count on it.",
+  "For now, no.",
+  "Absolutely not.",
+  "Highly unlikely.",
+  "Better not tell you now.",
+  "That's a hard no.",
+  "Fate says wait.",
+  "The universe doesn't answer...",
+  "Maybe.",
+];
+
+const negativeAnswers = [
+  "No.",
+  "Don't count on it.",
+  "For now, no.",
+  "Absolutely not.",
+  "Highly unlikely.",
+  "Better not tell you now.",
+  "That's a hard no.",
+  "Fate says wait.",
+  "The universe doesn't answer...",
+  "Maybe.",
 ];
 
 const form = document.querySelector(".askButton");
 const questionInput = document.querySelector("#askInput");
 
 form.addEventListener("submit", (a) => eightBall(a));
+
+
+
+
+
+
+
+
+
 
 function eightBall(a) {
   a.preventDefault();
@@ -36,13 +58,21 @@ function eightBall(a) {
   const randomAnswer = answers[randomIndex];
 
   const ansDiv = document.querySelector(".ansDiv");
-
   ansDiv.innerHTML = ``;
+  ansDiv.style.display = "block";
 
-  ansDiv.insertAdjacentHTML(
-    "beforeend",
-    `<h3 class="question text-2xl text-center">Question: ${question}</h3>
-        <h3 class="answer text-2xl text-center">Answer: ${randomAnswer}</h3>`,
-  );
+  if (negativeAnswers.includes(randomAnswer)) {
+    ansDiv.insertAdjacentHTML(
+      "beforeend",
+      `<h3 class="question text-2xl text-center">Question: ${question}</h3>
+      <h3 class="answer text-2xl text-center text-red-500">Answer: ${randomAnswer}</h3>`,
+    );
+  } else {
+    ansDiv.insertAdjacentHTML(
+      "beforeend",
+      `<h3 class="question text-2xl text-center">Question: ${question}</h3>
+      <h3 class="answer text-2xl text-center text-green-500">Answer: ${randomAnswer}</h3>`,
+    );
+  }
   form.reset();
 }
