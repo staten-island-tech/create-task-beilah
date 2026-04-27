@@ -41,15 +41,6 @@ const questionInput = document.querySelector("#askInput");
 
 form.addEventListener("submit", (a) => eightBall(a));
 
-
-
-
-
-
-
-
-
-
 function eightBall(a) {
   a.preventDefault();
   const question = questionInput.value;
